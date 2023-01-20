@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/small.css">
+    <title>Volleyball Score Board</title>
+</head>
+<body>
+    <div class="settingsIcon icon" >
+        <img src="images/settingsIcon.png" alt="settingsIcon" onclick="settingsToggle()">
+    </div>
+    <div class="adjustmentBtnsIconOff icon">
+        <img src="images/adjustmentBtnsOff.png" alt="adjustmentBtnsIconOff" onclick="adustmentBtnsToggle()">
+    </div>
+    <div class="adjustmentBtnsIconOn icon">
+        <img src="images/adjustmentBtnsOn.png" alt="adjustmentBtnsIconOn" onclick="adustmentBtnsToggle()">
+    </div>
+    <div class="notesIcon icon">
+        <img src="images/notesIcon.png" alt="notesIcon" onclick='notesToggle()'>
+    </div>
+    <div class="resetIcon icon">
+        <img src="images/resetIcon.png" alt="resetIcon" onclick="reset()">
+    </div>
+         
+    <div class="leftScore card" onclick="leftScoreIncrease()"
+        oncontextmenu="leftScoreDecrease()">
+        <p class="leftNumber"></p>
+    </div>
+    <div class="rightScore card" onclick="rightScoreIncrease()"
+        oncontextmenu="rightScoreDecrease()">
+        <p class="rightNumber"></p>
+    </div>
+    <div class="leftAdjustments">
+        <p class="leftPlus adbox" onclick="leftScoreIncrease()"> + </p>
+        <p class="leftMinus adbox" onclick="leftScoreDecrease()"> - </p>
+
+    </div>
+    <div class="rightAdjustments">
+        <p class="rightPlus adbox" onclick="rightScoreIncrease()"> + </p>
+        <p class="rightMinus adbox" onclick="rightScoreDecrease()"> - </p>
+    </div>
+
+    <div class="settingsView">
+        <div class="settingsContent">
+            <label for="leftColor">Left Team Color</label>
+            <input type="color" id="leftColor" value="#000000">
+            <label for="righColor">Right Team Color</label>
+            <input type="color" id="rightColor" value="#000000">
+            <label for="backColor">Background Color</label>
+            <input type="color" id="backColor" value="#000000">
+            <label for="max">Max Count</label>
+            <input type="text" id="max" name="Max Count" placeholder="default 21">
+            <input type="submit" value="Apply" id="applyBtn" onclick="apply()"></input>
+        </div>
+    </div>
+    
+    <div class="notesView">
+        <div class="notesContent">
+            <h1>NOTES ON USAGE</h1>
+            <p>test</p>
+        </div>
+
+    </div>
+
+</body>
+
+<footer>
+    <script src="js/main.js"></script>
+</footer>
+
+</html>
