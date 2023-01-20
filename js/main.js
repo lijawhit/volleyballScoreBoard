@@ -86,7 +86,8 @@ function settingsToggle() {
         leftScore.classList.add('off');
         rightScore.classList.add('off');
         resetIcon.classList.add('off');
-        adjustementBtnsIcon.classList.add('off');
+        adjustementBtnsIconOff.classList.add('off');
+        adjustementBtnsIconOn.classList.add('off');
         notesIcon.classList.add('off');
         set = 1
         adj = 0
@@ -99,7 +100,8 @@ function settingsToggle() {
             rightAdjustments.classList.remove('on');
 
             resetIcon.classList.add('off');
-            adjustementBtnsIcon.classList.add('off');
+            adjustementBtnsIconOff.classList.add('off');
+            adjustementBtnsIconOn.classList.add('off');
             notesIcon.classList.add('off');
             set = 1
             adj = 1
@@ -112,7 +114,8 @@ function settingsToggle() {
                 rightAdjustments.classList.remove('off');
 
                 resetIcon.classList.remove('off');
-                adjustementBtnsIcon.classList.remove('off');
+                adjustementBtnsIconOff.classList.remove('off');
+                adjustementBtnsIconOn.classList.remove('off');
                 notesIcon.classList.remove('off');
                 set = 0
                 adj = 0
@@ -124,7 +127,8 @@ function settingsToggle() {
                     leftAdjustments.classList.add('on');
                     rightAdjustments.classList.add('on');
                     resetIcon.classList.remove('off');
-                    adjustementBtnsIcon.classList.remove('off');
+                    adjustementBtnsIconOff.classList.remove('off');
+                    adjustementBtnsIconOn.classList.remove('off');
                     notesIcon.classList.remove('off');
                     set = 0
                     adj = 1
@@ -196,7 +200,6 @@ function adustmentBtnsToggle() {
         rightScore.classList.add('small')
         adjustementBtnsIconOn.classList.add('on')
         adjustementBtnsIconOff.classList.add('off')
-
         adj = 1
     }   else if (adj === 1){
         leftAdjustments.classList.remove('on');
