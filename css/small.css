@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+:root {
+    --background: #000000;
+    --textColor: #FFFFFF;
+    --font: 'Roboto Mono', monospace;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 45vw 1fr 45vw;
+    background-color: var(--background);
+    align-self: center;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+}
+
+.settingsIcon {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: left;
+
+}
+
+.adjustmentBtnsIconOff {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+}
+
+.adjustmentBtnsIconOn {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+}
+
+.notesIcon {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: right;
+}
+
+.resetIcon {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: center;
+    align-self: center;
+}
+
+.leftScore {
+    grid-column: 1;
+    grid-row: 2;
+    background-color: var(--background);
+}
+
+.rightScore {
+    grid-column: 3;
+    grid-row: 2;
+    background-color: var(--background);
+}
+
+.leftAdjustments {
+    grid-column: 1;
+    grid-row: 3;
+    font-size: 6vw;
+    display: none;
+    color: var(--textColor);
+    text-align: center;
+}
+
+.rightAdjustments {
+    grid-column: 3;
+    grid-row: 3;
+    font-size: 6vw;
+    display: none;
+    color: var(--textColor);
+    text-align: center;
+}
+
+
+.adbox {
+    border-style: solid;
+    border-radius: 1vw;
+    border-color: var(--textColor);
+    width: 9vw;
+    height: 9vw;
+    padding: auto;
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    padding: 3px;
+    width: 25px;
+    cursor: pointer;
+    -webkit-user-select: none;        
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+p {
+    font-family: var(--font);
+    justify-self: center;
+    align-self: center;
+    margin: auto;
+    padding: auto;
+    -webkit-user-select: none;        
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+.card {
+    justify-self: center;
+    align-self: center;
+    font-size: 25vw;
+    margin: 1vw;
+    border-style: solid;
+    border-color: var(--textColor);
+    border-radius: 5vw;
+    cursor: pointer;
+    display: grid;
+    height: 42vw;
+    width: 42vw;
+    color: var(--textColor);
+}
+
+.off {
+    display: none;
+}
+
+.on {
+    display: flex;
+}
+
+.settingsView {
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.settingsContent {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 11vw 10vw;
+    gap: 0.9vw;
+    font-family: var(--font);
+    font-size: 1.1vw;
+    color: black;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: var(--font);
+    font-size: 1.1vw;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #000000;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    grid-column: 1 / span 2;
+    font-family: var(--font);
+    font-size: 1.1vw;
+}
+
+input[type=color] {
+    justify-self: left;
+}
+
+.small {
+    font-size: 20vw;
+    height: 32vw;
+    width: 32vw;
+}
+
+.notesView {
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.notesContent {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 21vw;
+    gap: 0.9vw;
+    font-family: var(--font);
+    font-size: 1.1vw;
+    color: black;
+    text-align: center;
+}
+
+
