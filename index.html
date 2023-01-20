@@ -45,13 +45,13 @@
     <div class="settingsView">
         <div class="settingsContent">
             <label for="leftColor">Left Team Color</label>
-            <input type="color" id="leftColor" value="#000000">
+            <input type="color" id="leftColor" value="#000000" onfocus="deApply()">
             <label for="righColor">Right Team Color</label>
-            <input type="color" id="rightColor" value="#000000">
+            <input type="color" id="rightColor" value="#000000" onfocus="deApply()">
             <label for="backColor">Background Color</label>
-            <input type="color" id="backColor" value="#000000">
+            <input type="color" id="backColor" value="#000000" onfocus="deApply()">
             <label for="max">Max Count</label>
-            <input type="text" id="max" name="Max Count" placeholder="default 21">
+            <input type="text" id="max" name="Max Count" placeholder="default 21" onfocus="deApply(), this.value=''" >
             <input type="submit" value="Apply" id="applyBtn" onclick="apply()"></input>
         </div>
     </div>
@@ -59,7 +59,10 @@
     <div class="notesView">
         <div class="notesContent">
             <h1>NOTES ON USAGE</h1>
-            <p>test</p>
+            <p>General Increment: Left Click</p>
+            <p>General Decrement: Right Click</p>
+            <p>Left Score Key Adjustments: wasd </p>
+            <p>Right Score Key Adjustments: Arrow Keys</p>
         </div>
 
     </div>
