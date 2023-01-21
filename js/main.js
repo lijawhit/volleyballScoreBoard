@@ -9,6 +9,7 @@ let rightScore = document.querySelector('.rightScore');
 let leftNumber = document.querySelector('.leftNumber');
 let rightNumber = document.querySelector('.rightNumber');
 let applyBtn = document.querySelector('#applyBtn');
+let resetBtn = document.querySelector('#resetBtn');
 let settingsView = document.querySelector('.settingsView');
 let notesView = document.querySelector('.notesView');
 let leftAdjustments = document.querySelector('.leftAdjustments');
@@ -21,6 +22,8 @@ adjustmentBtnsIconOff.classList.add('on');
 adjustmentBtnsIconOn.classList.add('off');
 settingsView.classList.add('off');
 notesView.classList.add('off');
+
+resetIcon.classList.add('off');
 
 // leftAdjustments.classList.add('on');
 // rightAdjustments.classList.add('on');
@@ -95,13 +98,12 @@ function settingsToggle() {
         settingsView.classList.remove('off');
         leftScore.classList.add('off');
         rightScore.classList.add('off');
-        resetIcon.classList.add('off');
+        // resetIcon.classList.add('off');
         adjustmentBtnsIconOff.classList.remove('on');
         adjustmentBtnsIconOff.classList.add('off');
         notesIcon.classList.add('off');
         set = 1
         adj = 0
-        navigator.keyboard.lock()
         // console.log('2 - set ON and adj OFF')
     } else if (set === 0 && adj === 1) {
             // console.log('1 - set OFF and adj ON')
@@ -111,7 +113,7 @@ function settingsToggle() {
             leftAdjustments.classList.remove('on');
             rightAdjustments.classList.remove('on');
 
-            resetIcon.classList.add('off');
+            // resetIcon.classList.add('off');
             adjustmentBtnsIconOn.classList.remove('on');
             adjustmentBtnsIconOn.classList.add('off');
             notesIcon.classList.add('off');
@@ -126,7 +128,7 @@ function settingsToggle() {
                 leftAdjustments.classList.remove('off');
                 rightAdjustments.classList.remove('off');
 
-                resetIcon.classList.remove('off');
+                // resetIcon.classList.remove('off');
                 adjustmentBtnsIconOff.classList.remove('off');
                 adjustmentBtnsIconOff.classList.add('on');
                 notesIcon.classList.remove('off');
@@ -140,7 +142,7 @@ function settingsToggle() {
                     rightScore.classList.remove('off');
                     leftAdjustments.classList.add('on');
                     rightAdjustments.classList.add('on');
-                    resetIcon.classList.remove('off');
+                    // resetIcon.classList.remove('off');
                     adjustmentBtnsIconOn.classList.remove('off');
                     notesIcon.classList.remove('off');
                     set = 0
@@ -148,8 +150,8 @@ function settingsToggle() {
                     // console.log('1 - set OFF and adj ON')
                 };
     
-    applyBtn.style.backgroundColor = "#000000";
-    applyBtn.value = "Apply";
+    deApply()
+    deReset()
 };
 
 function notesToggle() {
@@ -158,7 +160,7 @@ function notesToggle() {
         notesView.classList.remove('off');
         leftScore.classList.add('off');
         rightScore.classList.add('off');
-        resetIcon.classList.add('off');
+        // resetIcon.classList.add('off');
         adjustmentBtnsIconOff.classList.remove('on');
         adjustmentBtnsIconOff.classList.add('off');
         settingsIcon.classList.add('off');
@@ -173,7 +175,7 @@ function notesToggle() {
             leftAdjustments.classList.remove('on');
             rightAdjustments.classList.remove('on');
 
-            resetIcon.classList.add('off');
+            // resetIcon.classList.add('off');
             adjustmentBtnsIconOn.classList.remove('on');
             adjustmentBtnsIconOn.classList.add('off');
             settingsIcon.classList.add('off');
@@ -188,7 +190,7 @@ function notesToggle() {
                 leftAdjustments.classList.remove('off');
                 rightAdjustments.classList.remove('off');
 
-                resetIcon.classList.remove('off');
+                // resetIcon.classList.remove('off');
                 adjustmentBtnsIconOff.classList.remove('off');
                 adjustmentBtnsIconOff.classList.add('on');
                 settingsIcon.classList.remove('off');
@@ -202,7 +204,7 @@ function notesToggle() {
                     rightScore.classList.remove('off');
                     leftAdjustments.classList.add('on');
                     rightAdjustments.classList.add('on');
-                    resetIcon.classList.remove('off');
+                    // resetIcon.classList.remove('off');
                     adjustmentBtnsIconOn.classList.remove('off');
                     settingsIcon.classList.remove('off');
                     not = 0
@@ -232,25 +234,20 @@ function adustmentBtnsToggle() {
         adj = 0
     };
 };
-
-function reset() {
-    leftNumber.innerText = 0;
-    rightNumber.innerText = 0;
-    a = 0;
-    b = 0;
-};
  
 function apply() {
-    reset()
     let maxNumber = document.getElementById('max').value;
 
+    console.log(maxNumber)
     if (maxNumber == "" || maxNumber == null) {
         maxNumber = 21
-    } else {
+    } else if (a > maxNumber || b > maxNumber) {
+        reset()
         maxNumber = maxNumber
-    }
+        } 
 
     max = maxNumber
+
     let backColor = document.getElementById('backColor').value;
     
     body.style.backgroundColor = backColor;
@@ -261,6 +258,20 @@ function apply() {
 function deApply() {
     applyBtn.style.backgroundColor = "#000000";
     applyBtn.value = "Apply";
+}
+
+function reset() {
+    leftNumber.innerText = 0;
+    rightNumber.innerText = 0;
+    a = 0;
+    b = 0;
+    resetBtn.style.backgroundColor = "green";
+    resetBtn.value = "DONE";
+}
+
+function deReset() {
+    resetBtn.style.backgroundColor = "#000000";
+    resetBtn.value = "Reset";
 }
 
 

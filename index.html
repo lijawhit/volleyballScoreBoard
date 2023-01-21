@@ -38,21 +38,24 @@
 
     <div class="settingsView">
         <div class="settingsContent">
+            <h2 onclick="settingsToggle()">X</h2>
             <label for="backColor">Background Color</label>
             <input type="color" id="backColor" value="#000000" onfocus="deApply()">
             <label for="max">Max Count</label>
             <input type="text" id="max" name="Max Count" onfocus="deApply(), this.value=''" >
             <input type="submit" value="Apply" id="applyBtn" onclick="apply()"></input>
+            <input type="submit" value="Reset" id="resetBtn" onclick="reset()"></input>
         </div>
     </div>
     
     <div class="notesView">
         <div class="notesContent">
             <h1>NOTES ON USAGE</h1>
-            <p>General Increment: Left Click</p>
-            <p>General Decrement: Right Click</p>
-            <p>Left Score Key Adjustments: Increase - w/7 Decrease - s/4 </p>
-            <p>Right Score Key Adjustments: Increase - o/9 Decrease - l/6</p>
+            <h6>General Increment: Left Click</h6>
+            <h6>General Decrement: Right Click</h6>
+            <h6>Left Score Key Adjustments: <br>Increase - w/7 Decrease - s/4 </h6>
+            <h6>Right Score Key Adjustments: <br>Increase - o/9 Decrease - l/6</h6>
+            <h1></h1>
         </div>
 
     </div>

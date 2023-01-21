@@ -10,7 +10,7 @@
 body {
     display: grid;
     grid-template-columns: 3fr .2fr 3fr;
-    grid-template-rows: 5vh 95vh;
+    grid-template-rows: 6vh 94vh;
     background-color: var(--background);
     align-self: center;
     margin: 0;
@@ -54,12 +54,12 @@ body {
 
 .leftScore {
     grid-column: 1;
-    grid-row: 2/4;
+    grid-row: 2;
 }
 
 .rightScore {
     grid-column: 3;
-    grid-row: 2/4;
+    grid-row: 2;
 }
 
 .leftAdjustments {
@@ -115,26 +115,6 @@ p {
     user-select: none;
 }
 
-
-.card {
-    justify-self: center;
-    align-self: center;
-    font-size: 25vw;
-    cursor: pointer;
-    display: grid;
-    height: 100%;
-    width: 100%;
-    color: var(--textColor);
-}
-
-.off {
-    display: none;
-}
-
-.on {
-    display: flex;
-}
-
 .settingsView {
     position: absolute;
     transform: translate(-50%,-50%);
@@ -151,9 +131,50 @@ p {
     grid-template-columns: 11vw 10vw;
     gap: 0.9vw;
     font-family: var(--font);
-    font-size: 1.1vw;
+    font-size: 22px;
     color: black;
 }
+
+h1 {
+    margin: 5px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-top: -20px;
+    position: fixed;
+    margin: 0;
+    justify-self: right;
+    align-self: start;
+    cursor: pointer;
+}
+
+h6 {
+    margin: 1px;
+}
+
+
+.card {
+    margin-bottom: 20px;
+    justify-self: center;
+    align-self: center;
+    font-size: 35vw;
+    cursor: pointer;
+    display: grid;
+    height: 100%;
+    width: 100%;
+    color: var(--textColor);
+}
+
+.off {
+    display: none;
+}
+
+.on {
+    display: flex;
+}
+
+
 
 input[type=text], select {
     width: 100%;
