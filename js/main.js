@@ -285,9 +285,6 @@ var myDisabledEvent = function (event) {
     } // always issues single clicks but not for touchmove events
 };
 
-var c;
-
-c = document.body;
-c.addEventListener("touchmove", disablePinchToZoom, false);
-c.addEventListener("touchmove", myDisabledTouchmove, false);
-c.addEventListener("touchend", myDisabledEvent, false);
+window.addEventListener("touchmove", disablePinchToZoom, false);
+window.addEventListener("touchmove", myDisabledTouchmove, false);
+window.addEventListener("touchend", myDisabledEvent, false);
