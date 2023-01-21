@@ -72,9 +72,9 @@ window.addEventListener('keydown', (event) => {
         leftScoreIncrease();
     }   else if (event.key === 's' || event.key === 'a'){
             leftScoreDecrease();
-        }   else if (event.key === 'ArrowUp' || event.key === 'ArrowRight') {
+        }   else if (event.key === 'o' || event.key === ';') {
                 rightScoreIncrease();
-            }   else if (event.key === 'ArrowDown' || event.key === 'ArrowLeft') {
+            }   else if (event.key === 'l' || event.key === 'k') {
                     rightScoreDecrease();
                 }  
 });
