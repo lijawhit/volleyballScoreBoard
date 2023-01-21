@@ -68,13 +68,13 @@ window.addEventListener("contextmenu", function (e) {
     }); 
 
 window.addEventListener('keydown', (event) => {
-    if (event.key === 'w' || event.key === 'd') {
+    if (event.key === 'w' || event.key === 'w') {
         leftScoreIncrease();
-    }   else if (event.key === 's' || event.key === 'a'){
+    }   else if (event.key === 's' || event.key === 's'){
             leftScoreDecrease();
-        }   else if (event.key === 'o' || event.key === ';') {
+        }   else if (event.key === 'o' || event.key === 'o') {
                 rightScoreIncrease();
-            }   else if (event.key === 'l' || event.key === 'k') {
+            }   else if (event.key === 'l' || event.key === 'l') {
                     rightScoreDecrease();
                 }  
 });
