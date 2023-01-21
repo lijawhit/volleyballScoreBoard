@@ -8,28 +8,22 @@
     <title>Volleyball Score Board</title>
 </head>
 <body>
-    <div class="settingsIcon icon" >
-        <img src="images/settingsIcon.png" alt="settingsIcon" onclick="settingsToggle()">
-    </div>
-    <div class="adjustmentBtnsIconOff icon">
-        <img src="images/adjustmentBtnsOff.png" alt="adjustmentBtnsIconOff" onclick="adustmentBtnsToggle()">
-    </div>
-    <div class="adjustmentBtnsIconOn icon">
-        <img src="images/adjustmentBtnsOn.png" alt="adjustmentBtnsIconOn" onclick="adustmentBtnsToggle()">
-    </div>
-    <div class="notesIcon icon">
-        <img src="images/notesIcon.png" alt="notesIcon" onclick='notesToggle()'>
-    </div>
-    <div class="resetIcon icon">
-        <img src="images/resetIcon.png" alt="resetIcon" onclick="reset()">
-    </div>
+    
+    <img class="settingsIcon icon" src="images/settingsIcon.png" alt="settingsIcon" onclick="settingsToggle()">
+    
+    <img class="adjustmentBtnsIconOff icon" src="images/adjustmentBtnsOff.png" alt="adjustmentBtnsIconOff" onclick="adustmentBtnsToggle()">
+
+    <img class="adjustmentBtnsIconOn icon" src="images/adjustmentBtnsOn.png" alt="adjustmentBtnsIconOn" onclick="adustmentBtnsToggle()">
+
+    <img class="notesIcon icon" src="images/notesIcon.png" alt="notesIcon" onclick='notesToggle()'>
+
+    <img class="resetIcon icon" src="images/resetIcon.png" alt="resetIcon" onclick="reset()">
+
          
-    <div class="leftScore card" onclick="leftScoreIncrease()"
-        oncontextmenu="leftScoreDecrease()">
+    <div class="leftScore card" onclick="leftScoreIncrease()" oncontextmenu="leftScoreDecrease()">
         <p class="leftNumber"></p>
     </div>
-    <div class="rightScore card" onclick="rightScoreIncrease()"
-        oncontextmenu="rightScoreDecrease()">
+    <div class="rightScore card" onclick="rightScoreIncrease()" oncontextmenu="rightScoreDecrease()">
         <p class="rightNumber"></p>
     </div>
     <div class="leftAdjustments">
@@ -44,10 +38,6 @@
 
     <div class="settingsView">
         <div class="settingsContent">
-            <label for="leftColor">Left Team Color</label>
-            <input type="color" id="leftColor" value="#000000" onfocus="deApply()">
-            <label for="righColor">Right Team Color</label>
-            <input type="color" id="rightColor" value="#000000" onfocus="deApply()">
             <label for="backColor">Background Color</label>
             <input type="color" id="backColor" value="#000000" onfocus="deApply()">
             <label for="max">Max Count</label>
@@ -62,7 +52,7 @@
             <p>General Increment: Left Click</p>
             <p>General Decrement: Right Click</p>
             <p>Left Score Key Adjustments: Increase - w/7 Decrease - s/4 </p>
-            <p>Right Score Key Adjustments: Increase - o/9 Decrease - l/6;</p>
+            <p>Right Score Key Adjustments: Increase - o/9 Decrease - l/6</p>
         </div>
 
     </div>

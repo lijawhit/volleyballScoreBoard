@@ -22,6 +22,15 @@ adjustmentBtnsIconOn.classList.add('off');
 settingsView.classList.add('off');
 notesView.classList.add('off');
 
+// leftAdjustments.classList.add('on');
+// rightAdjustments.classList.add('on');
+// body.classList.add('bodySmall')
+// adjustmentBtnsIconOn.classList.remove('off')
+// adjustmentBtnsIconOn.classList.add('on')
+// adjustmentBtnsIconOff.classList.remove('on')
+// adjustmentBtnsIconOff.classList.add('off')
+
+
 
 let a = 0;
 let b = 0;
@@ -206,8 +215,7 @@ function adustmentBtnsToggle() {
     if (adj === 0) {
         leftAdjustments.classList.add('on');
         rightAdjustments.classList.add('on');
-        leftScore.classList.add('small')
-        rightScore.classList.add('small')
+        body.classList.add('bodySmall')
         adjustmentBtnsIconOn.classList.remove('off')
         adjustmentBtnsIconOn.classList.add('on')
         adjustmentBtnsIconOff.classList.remove('on')
@@ -216,8 +224,7 @@ function adustmentBtnsToggle() {
     }   else if (adj === 1){
         leftAdjustments.classList.remove('on');
         rightAdjustments.classList.remove('on');
-        leftScore.classList.remove('small')
-        rightScore.classList.remove('small')
+        body.classList.remove('bodySmall')
         adjustmentBtnsIconOff.classList.remove('off')
         adjustmentBtnsIconOff.classList.add('on')
         adjustmentBtnsIconOn.classList.remove('on')
@@ -245,11 +252,7 @@ function apply() {
 
     max = maxNumber
     let backColor = document.getElementById('backColor').value;
-    let leftColor = document.getElementById('leftColor').value;
-    let rightColor = document.getElementById('rightColor').value;
     
-    leftScore.style.backgroundColor = leftColor;
-    rightScore.style.backgroundColor = rightColor;
     body.style.backgroundColor = backColor;
     applyBtn.style.backgroundColor = "green";
     applyBtn.value = "DONE";
