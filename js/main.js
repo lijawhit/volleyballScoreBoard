@@ -37,7 +37,7 @@ resetIcon.classList.add('off');
 
 let a = 0;
 let b = 0;
-let max = 100;
+let max = 99;
 let min = 0;
 let adj = 0;
 let set = 0;
@@ -104,6 +104,7 @@ function settingsToggle() {
         notesIcon.classList.add('off');
         set = 1
         adj = 0
+        disableKeys()
         // console.log('2 - set ON and adj OFF')
     } else if (set === 0 && adj === 1) {
             // console.log('1 - set OFF and adj ON')
@@ -119,6 +120,7 @@ function settingsToggle() {
             notesIcon.classList.add('off');
             set = 1
             adj = 1
+            disableKeys()
             // console.log('1 - set ON and adj ON')
         }   else if (set === 1 && adj === 0) {
                 // console.log('1 - set ON and adj OFF')
@@ -134,6 +136,7 @@ function settingsToggle() {
                 notesIcon.classList.remove('off');
                 set = 0
                 adj = 0
+                enableKeys()
                 // console.log('1 - set OFF and adj OFF')
             }  else if (set === 1 && adj === 1) {
                     // console.log('1 - set ON and adj ON')
@@ -147,6 +150,7 @@ function settingsToggle() {
                     notesIcon.classList.remove('off');
                     set = 0
                     adj = 1
+                    enableKeys()
                     // console.log('1 - set OFF and adj ON')
                 };
     
@@ -166,6 +170,7 @@ function notesToggle() {
         settingsIcon.classList.add('off');
         not = 1
         adj = 0
+        disableKeys()
         // console.log('2 - set ON and adj OFF')
     } else if (not === 0 && adj === 1) {
             // console.log('1 - set OFF and adj ON')
@@ -181,6 +186,7 @@ function notesToggle() {
             settingsIcon.classList.add('off');
             not = 1
             adj = 1
+            disableKeys()
             // console.log('1 - set ON and adj ON')
         }   else if (not === 1 && adj === 0) {
                 // console.log('1 - set ON and adj OFF')
@@ -196,6 +202,7 @@ function notesToggle() {
                 settingsIcon.classList.remove('off');
                 not = 0
                 adj = 0
+                enableKeys()
                 // console.log('1 - set OFF and adj OFF')
             }  else if (not === 1 && adj === 1) {
                     // console.log('1 - set ON and adj ON')
@@ -209,6 +216,7 @@ function notesToggle() {
                     settingsIcon.classList.remove('off');
                     not = 0
                     adj = 1
+                    enableKeys()
                     // console.log('1 - set OFF and adj ON')
                 };
 };
@@ -302,3 +310,16 @@ var myDisabledEvent = function (event) {
 window.addEventListener("touchmove", disablePinchToZoom, false);
 window.addEventListener("touchmove", myDisabledTouchmove, false);
 window.addEventListener("touchend", myDisabledEvent, false);
+
+
+function disableKeys() {
+    window.onkeydown = function (e) {
+        return false;
+    };
+};
+
+function enableKeys() {
+    window.onkeydown = function (e) {
+        return true;
+    };
+};

@@ -9,7 +9,7 @@
 
 body {
     display: grid;
-    grid-template-columns: 3fr .2fr 3fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 6vh 94vh;
     background-color: var(--background);
     align-self: center;
@@ -28,19 +28,19 @@ body {
 }
 
 .adjustmentBtnsIconOff {
-    grid-column: 2;
+    grid-column: 1/3;
     grid-row: 1;
     justify-self: center;
 }
 
 .adjustmentBtnsIconOn {
-    grid-column: 2;
+    grid-column: 1/3;
     grid-row: 1;
     justify-self: center;
 }
 
 .notesIcon {
-    grid-column: 3;
+    grid-column: 2;
     grid-row: 1;
     justify-self: right;
 }
@@ -58,7 +58,7 @@ body {
 }
 
 .rightScore {
-    grid-column: 3;
+    grid-column: 2;
     grid-row: 2;
 }
 
@@ -72,7 +72,7 @@ body {
 }
 
 .rightAdjustments {
-    grid-column: 3;
+    grid-column: 2;
     grid-row: 3;
     font-size: 6vw;
     display: none;
