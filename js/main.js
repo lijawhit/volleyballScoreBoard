@@ -312,14 +312,14 @@ window.addEventListener("touchmove", myDisabledTouchmove, false);
 window.addEventListener("touchend", myDisabledEvent, false);
 
 
-function disableKeys() {
-    window.onkeydown = function (e) {
-        return false;
-    };
-};
+// function disableKeys() {
+//     window.onkeydown = function (e) {
+//         return false;
+//     };
+// };
 
-function enableKeys() {
-    window.onkeydown = function (e) {
-        return true;
-    };
-};
+// function enableKeys() {
+//     window.onkeydown = function (e) {
+//         return true;
+//     };
+// };

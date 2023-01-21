@@ -116,7 +116,9 @@ p {
 }
 
 .settingsView {
+    width: 35vh;
     position: absolute;
+    display: grid;
     transform: translate(-50%,-50%);
     top: 50%;
     left: 50%;
@@ -127,8 +129,9 @@ p {
 
 .settingsContent {
     display: grid;
-    align-items: center;
-    grid-template-columns: 11vw 10vw;
+    align-self: center;
+    justify-self: center;
+    grid-template-columns: 1fr 1fr;
     gap: 0.9vw;
     font-family: var(--font);
     font-size: 22px;
@@ -185,7 +188,6 @@ input[type=text], select {
     border-radius: 4px;
     box-sizing: border-box;
     font-family: var(--font);
-    font-size: 1.1vw;
 }
 
 input[type=submit] {
@@ -199,7 +201,6 @@ input[type=submit] {
     cursor: pointer;
     grid-column: 1 / span 2;
     font-family: var(--font);
-    font-size: 1.1vw;
 }
 
 input[type=color] {
