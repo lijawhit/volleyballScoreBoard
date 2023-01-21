@@ -260,8 +260,40 @@ function deApply() {
     applyBtn.value = "Apply";
 }
 
-document.addEventListener('touchmove', function (event) {
-    if (event.scale !== 1) {
-        event.preventDefault();
+
+
+
+
+var touchmovetime;
+
+// add events to inputs and disable pinchtozoom
+var disablePinchToZoom = function (event) {
+    if (typeof event.scale !== "undefined" && event.scale !== 1) { event.preventDefault(); }
+    touchmovetime=event.timeStamp;
+};
+
+var myDisabledTouchmove = function (event) {
+    event.preventDefault();
+    touchmovetime=event.timeStamp;
+};
+
+var myDisabledEvent = function (event) {
+    event.preventDefault();
+    if ((event.timeStamp - touchmovetime)>200) {
+        event.changedTouches[0].target.click();
+        event.changedTouches[0].target.focus();
+    } // always issues single clicks but not for touchmove events
+};
+
+var ids= ["element1", "element2"];
+var c;
+
+for (var i in ids) {
+    c = document.getElementById(ids[i]);
+    c.addEventListener("touchmove", disablePinchToZoom, false);
+    c.addEventListener("touchmove", myDisabledTouchmove, false);
+    c.addEventListener("touchend", myDisabledEvent, false);
+    if (isAndroid) {
+        c.addEventListener("touchstart", function(e) { touchEvent.preventDefault(); }, false);
     }
-}, {passive: false});
+}
