@@ -285,15 +285,9 @@ var myDisabledEvent = function (event) {
     } // always issues single clicks but not for touchmove events
 };
 
-var ids= ["element1", "element2"];
 var c;
 
-for (var i in ids) {
-    c = document.getElementById(ids[i]);
-    c.addEventListener("touchmove", disablePinchToZoom, false);
-    c.addEventListener("touchmove", myDisabledTouchmove, false);
-    c.addEventListener("touchend", myDisabledEvent, false);
-    if (isAndroid) {
-        c.addEventListener("touchstart", function(e) { touchEvent.preventDefault(); }, false);
-    }
-}
+c = document.body;
+c.addEventListener("touchmove", disablePinchToZoom, false);
+c.addEventListener("touchmove", myDisabledTouchmove, false);
+c.addEventListener("touchend", myDisabledEvent, false);
