@@ -259,3 +259,9 @@ function deApply() {
     applyBtn.style.backgroundColor = "#000000";
     applyBtn.value = "Apply";
 }
+
+document.addEventListener('touchmove', function (event) {
+    if (event.scale !== 1) {
+        event.preventDefault();
+    }
+}, {passive: false});
