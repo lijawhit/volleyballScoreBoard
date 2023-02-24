@@ -42,7 +42,15 @@
             <label for="backColor">Background Color</label>
             <input type="color" id="backColor" value="#000000" onfocus="deApply()">
             <label for="max">Max Count</label>
-            <input type="text" id="max" name="Max Count" onfocus="deApply(), this.value=''" >
+            <input type="text" id="max" name="Max Count" placeholder="99" onfocus="deApply(), this.value=''" >
+            <label for="max">Left Key Increase</label>
+            <input type="text" id="LIKey" name="Max Count" placeholder="7" onfocus="deApply(), this.value=''" >
+            <label for="max">Left Key Decrease</label>
+            <input type="text" id="LDKey" name="Max Count" placeholder="4" onfocus="deApply(), this.value=''" >
+            <label for="max">Right Key Increase</label>
+            <input type="text" id="RIKey" name="Max Count" placeholder="9" onfocus="deApply(), this.value=''" >
+            <label for="max">Left Key Decrease</label>
+            <input type="text" id="RDKey" name="Max Count" placeholder="6" onfocus="deApply(), this.value=''" >
             <input type="submit" value="Apply" id="applyBtn" onclick="apply()"></input>
             <input type="submit" value="Reset" id="resetBtn" onclick="reset()"></input>
         </div>

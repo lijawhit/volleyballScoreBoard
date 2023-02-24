@@ -134,7 +134,7 @@ p {
     grid-template-columns: 1fr 1fr;
     gap: 0.9vw;
     font-family: var(--font);
-    font-size: 22px;
+    font-size: 15px;
     color: black;
 }
 

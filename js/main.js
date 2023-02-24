@@ -42,6 +42,10 @@ let min = 0;
 let adj = 0;
 let set = 0;
 let not = 0;
+let LIKeyV = 7;
+let LDKeyV = 4;
+let RIKeyV = 9;
+let RDKeyV = 6;
 
 function leftScoreIncrease() {
     if(a < max){
@@ -80,13 +84,13 @@ window.addEventListener("contextmenu", function (e) {
     }); 
 
 window.addEventListener('keydown', (event) => {
-    if (event.key === 'w' || event.key === '7') {
+    if (event.key === LIKeyV || event.key === '7' || event.key === 'ArrowUp') {
         leftScoreIncrease();
-    }   else if (event.key === 's' || event.key === '4'){
+    }   else if (event.key === LDKeyV || event.key === '4' || event.key === 'ArrowDown'){
             leftScoreDecrease();
-        }   else if (event.key === 'o' || event.key === '9') {
+        }   else if (event.key === RIKeyV || event.key === '9' || event.key === 'ArrowRight') {
                 rightScoreIncrease();
-            }   else if (event.key === 'l' || event.key === '6') {
+            }   else if (event.key === RDKeyV || event.key === '6' || event.key === 'ArrowLeft') {
                     rightScoreDecrease();
                 }  
 });
@@ -104,7 +108,6 @@ function settingsToggle() {
         notesIcon.classList.add('off');
         set = 1
         adj = 0
-        disableKeys()
         // console.log('2 - set ON and adj OFF')
     } else if (set === 0 && adj === 1) {
             // console.log('1 - set OFF and adj ON')
@@ -120,7 +123,6 @@ function settingsToggle() {
             notesIcon.classList.add('off');
             set = 1
             adj = 1
-            disableKeys()
             // console.log('1 - set ON and adj ON')
         }   else if (set === 1 && adj === 0) {
                 // console.log('1 - set ON and adj OFF')
@@ -136,7 +138,6 @@ function settingsToggle() {
                 notesIcon.classList.remove('off');
                 set = 0
                 adj = 0
-                enableKeys()
                 // console.log('1 - set OFF and adj OFF')
             }  else if (set === 1 && adj === 1) {
                     // console.log('1 - set ON and adj ON')
@@ -150,7 +151,6 @@ function settingsToggle() {
                     notesIcon.classList.remove('off');
                     set = 0
                     adj = 1
-                    enableKeys()
                     // console.log('1 - set OFF and adj ON')
                 };
     
@@ -170,7 +170,6 @@ function notesToggle() {
         settingsIcon.classList.add('off');
         not = 1
         adj = 0
-        disableKeys()
         // console.log('2 - set ON and adj OFF')
     } else if (not === 0 && adj === 1) {
             // console.log('1 - set OFF and adj ON')
@@ -186,7 +185,6 @@ function notesToggle() {
             settingsIcon.classList.add('off');
             not = 1
             adj = 1
-            disableKeys()
             // console.log('1 - set ON and adj ON')
         }   else if (not === 1 && adj === 0) {
                 // console.log('1 - set ON and adj OFF')
@@ -202,7 +200,6 @@ function notesToggle() {
                 settingsIcon.classList.remove('off');
                 not = 0
                 adj = 0
-                enableKeys()
                 // console.log('1 - set OFF and adj OFF')
             }  else if (not === 1 && adj === 1) {
                     // console.log('1 - set ON and adj ON')
@@ -216,7 +213,6 @@ function notesToggle() {
                     settingsIcon.classList.remove('off');
                     not = 0
                     adj = 1
-                    enableKeys()
                     // console.log('1 - set OFF and adj ON')
                 };
 };
@@ -242,23 +238,44 @@ function adustmentBtnsToggle() {
         adj = 0
     };
 };
- 
-function apply() {
+
+function maxCount(){
     let maxNumber = document.getElementById('max').value;
 
     console.log(maxNumber)
     if (maxNumber == "" || maxNumber == null) {
-        maxNumber = 21
+        maxNumber = 99
     } else if (a > maxNumber || b > maxNumber) {
         reset()
         maxNumber = maxNumber
         } 
 
     max = maxNumber
+}
 
-    let backColor = document.getElementById('backColor').value;
-    
+function backColor() {
+    let backColor = document.getElementById('backColor').value
     body.style.backgroundColor = backColor;
+}
+
+function keyAssignment() {
+    let LIKey = document.getElementById('LIKey').value;
+    let LDKey = document.getElementById('LDKey').value;
+    let RIKey = document.getElementById('RIKey').value;
+    let RDKey = document.getElementById('RDKey').value;
+
+    LIKeyV = LIKey;
+    LDKeyV = LDKey;
+    RIKeyV = RIKey;
+    RDKeyV = RDKey;
+    
+}
+ 
+function apply() {
+    maxCount()
+    backColor() 
+    keyAssignment()
+    
     applyBtn.style.backgroundColor = "green";
     applyBtn.value = "DONE";
 };
@@ -281,45 +298,3 @@ function deReset() {
     resetBtn.style.backgroundColor = "#000000";
     resetBtn.value = "Reset";
 }
-
-
-
-
-
-var touchmovetime;
-
-// add events to inputs and disable pinchtozoom
-var disablePinchToZoom = function (event) {
-    if (typeof event.scale !== "undefined" && event.scale !== 1) { event.preventDefault(); }
-    touchmovetime=event.timeStamp;
-};
-
-var myDisabledTouchmove = function (event) {
-    event.preventDefault();
-    touchmovetime=event.timeStamp;
-};
-
-var myDisabledEvent = function (event) {
-    event.preventDefault();
-    if ((event.timeStamp - touchmovetime)>200) {
-        event.changedTouches[0].target.click();
-        event.changedTouches[0].target.focus();
-    } // always issues single clicks but not for touchmove events
-};
-
-window.addEventListener("touchmove", disablePinchToZoom, false);
-window.addEventListener("touchmove", myDisabledTouchmove, false);
-window.addEventListener("touchend", myDisabledEvent, false);
-
-
-// function disableKeys() {
-//     window.onkeydown = function (e) {
-//         return false;
-//     };
-// };
-
-// function enableKeys() {
-//     window.onkeydown = function (e) {
-//         return true;
-//     };
-// };
