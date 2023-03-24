@@ -42,10 +42,10 @@ let min = 0;
 let adj = 0;
 let set = 0;
 let not = 0;
-let LIKeyV = 7;
-let LDKeyV = 4;
-let RIKeyV = 9;
-let RDKeyV = 6;
+let LIKeyV = 'ArrowUp';
+let LDKeyV = 'ArrowDown';
+let RIKeyV = 'ArrowRight';
+let RDKeyV = 'ArrowLeft';
 
 function leftScoreIncrease() {
     if(a < max){
@@ -84,15 +84,18 @@ window.addEventListener("contextmenu", function (e) {
     }); 
 
 window.addEventListener('keydown', (event) => {
-    if (event.key === LIKeyV || event.key === '7' || event.key === 'ArrowUp') {
-        leftScoreIncrease();
-    }   else if (event.key === LDKeyV || event.key === '4' || event.key === 'ArrowDown'){
-            leftScoreDecrease();
-        }   else if (event.key === RIKeyV || event.key === '9' || event.key === 'ArrowRight') {
-                rightScoreIncrease();
-            }   else if (event.key === RDKeyV || event.key === '6' || event.key === 'ArrowLeft') {
-                    rightScoreDecrease();
-                }  
+    if (set === 0 && not === 0) {
+        if (event.key === LIKeyV) {
+            leftScoreIncrease();
+        }   else if (event.key === LDKeyV){
+                leftScoreDecrease();
+            }   else if (event.key === RIKeyV) {
+                    rightScoreIncrease();
+                }   else if (event.key === RDKeyV) {
+                        rightScoreDecrease();
+                    }  
+    }
+
 });
 
 
@@ -277,7 +280,7 @@ function apply() {
     keyAssignment()
     
     applyBtn.style.backgroundColor = "green";
-    applyBtn.value = "DONE";
+    applyBtn.value = "Applied";
 };
 
 function deApply() {
@@ -297,4 +300,38 @@ function reset() {
 function deReset() {
     resetBtn.style.backgroundColor = "#000000";
     resetBtn.value = "Reset";
+}
+
+function preset(number) {
+    deApply()
+    if (number === 1) {
+        document.getElementById('LIKey').value = 'AudioVolumeUp';
+        document.getElementById('LDKey').value = 'AudioVolumeDown';
+        document.getElementById('RIKey').value = 'ArrowUp';
+        document.getElementById('RDKey').value = 'ArrowDown';
+        } else if (number === 2) {
+            document.getElementById('LIKey').value = 7;
+            document.getElementById('LDKey').value = 4;
+            document.getElementById('RIKey').value = 9;
+            document.getElementById('RDKey').value = 6;
+            } else if (number === 3) {
+                document.getElementById('LIKey').value = 9;
+                document.getElementById('LDKey').value = 6;
+                document.getElementById('RIKey').value = 7;
+                document.getElementById('RDKey').value = 4;
+                } else {
+                    document.getElementById('LIKey').value = "ArrowUp" ;
+                    document.getElementById('LDKey').value = "ArrowDown";
+                    document.getElementById('RIKey').value = "ArrowRight";
+                    document.getElementById('RDKey').value = "ArrowLeft";
+                }
+}
+
+function blank() {
+    console.log('test')
+    if (set == 1) {
+        settingsToggle()
+    } else if (not === 1) {
+        notesToggle()
+    }
 }

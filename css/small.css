@@ -52,6 +52,11 @@ body {
     align-self: center;
 }
 
+.blank {
+    grid-column: 1/5;
+    grid-row: 2/5;
+}
+
 .leftScore {
     grid-column: 1;
     grid-row: 2;
@@ -205,6 +210,12 @@ input[type=submit] {
 
 input[type=color] {
     justify-self: left;
+}
+
+#Default, #preset1, #preset2, #preset3 {
+    width: 50%;
+    grid-column: auto;
+    margin: auto;
 }
 
 .bodySmall {
