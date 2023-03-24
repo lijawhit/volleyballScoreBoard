@@ -1,6 +1,5 @@
 let settingsIcon = document.querySelector('.settingsIcon');
-let adjustmentBtnsIconOff = document.querySelector('.adjustmentBtnsIconOff');
-let adjustmentBtnsIconOn = document.querySelector('.adjustmentBtnsIconOn');
+let adjustmentBtnsIcon = document.querySelector('.adjustmentBtnsIcon');
 let notesIcon = document.querySelector('.notesIcon');
 let resetIcon = document.querySelector('.resetIcon');
 let body = document.querySelector('body');
@@ -14,26 +13,15 @@ let settingsView = document.querySelector('.settingsView');
 let notesView = document.querySelector('.notesView');
 let leftAdjustments = document.querySelector('.leftAdjustments');
 let rightAdjustments = document.querySelector('.rightAdjustments');
+let iconsBtns = document.querySelector('.iconsBtnsToggle');
 
 leftNumber.innerText = 0;
 rightNumber.innerText = 0;
 
-adjustmentBtnsIconOff.classList.add('on');
-adjustmentBtnsIconOn.classList.add('off');
 settingsView.classList.add('off');
 notesView.classList.add('off');
 
 resetIcon.classList.add('off');
-
-// leftAdjustments.classList.add('on');
-// rightAdjustments.classList.add('on');
-// body.classList.add('bodySmall')
-// adjustmentBtnsIconOn.classList.remove('off')
-// adjustmentBtnsIconOn.classList.add('on')
-// adjustmentBtnsIconOff.classList.remove('on')
-// adjustmentBtnsIconOff.classList.add('off')
-
-
 
 let a = 0;
 let b = 0;
@@ -106,9 +94,9 @@ function settingsToggle() {
         leftScore.classList.add('off');
         rightScore.classList.add('off');
         // resetIcon.classList.add('off');
-        adjustmentBtnsIconOff.classList.remove('on');
-        adjustmentBtnsIconOff.classList.add('off');
+        adjustmentBtnsIcon.classList.add('off');
         notesIcon.classList.add('off');
+        iconsBtns.classList.add('off');
         set = 1
         adj = 0
         // console.log('2 - set ON and adj OFF')
@@ -121,9 +109,9 @@ function settingsToggle() {
             rightAdjustments.classList.remove('on');
 
             // resetIcon.classList.add('off');
-            adjustmentBtnsIconOn.classList.remove('on');
-            adjustmentBtnsIconOn.classList.add('off');
+            adjustmentBtnsIcon.classList.add('off');
             notesIcon.classList.add('off');
+            iconsBtns.classList.add('off');
             set = 1
             adj = 1
             // console.log('1 - set ON and adj ON')
@@ -136,9 +124,9 @@ function settingsToggle() {
                 rightAdjustments.classList.remove('off');
 
                 // resetIcon.classList.remove('off');
-                adjustmentBtnsIconOff.classList.remove('off');
-                adjustmentBtnsIconOff.classList.add('on');
+                adjustmentBtnsIcon.classList.remove('off');
                 notesIcon.classList.remove('off');
+                iconsBtns.classList.remove('off');
                 set = 0
                 adj = 0
                 // console.log('1 - set OFF and adj OFF')
@@ -150,8 +138,9 @@ function settingsToggle() {
                     leftAdjustments.classList.add('on');
                     rightAdjustments.classList.add('on');
                     // resetIcon.classList.remove('off');
-                    adjustmentBtnsIconOn.classList.remove('off');
+                    adjustmentBtnsIcon.classList.remove('off');
                     notesIcon.classList.remove('off');
+                    iconsBtns.classList.remove('off');
                     set = 0
                     adj = 1
                     // console.log('1 - set OFF and adj ON')
@@ -168,9 +157,9 @@ function notesToggle() {
         leftScore.classList.add('off');
         rightScore.classList.add('off');
         // resetIcon.classList.add('off');
-        adjustmentBtnsIconOff.classList.remove('on');
-        adjustmentBtnsIconOff.classList.add('off');
+        adjustmentBtnsIcon.classList.add('off');
         settingsIcon.classList.add('off');
+        iconsBtns.classList.add('off');
         not = 1
         adj = 0
         // console.log('2 - set ON and adj OFF')
@@ -183,9 +172,10 @@ function notesToggle() {
             rightAdjustments.classList.remove('on');
 
             // resetIcon.classList.add('off');
-            adjustmentBtnsIconOn.classList.remove('on');
-            adjustmentBtnsIconOn.classList.add('off');
+            
+            adjustmentBtnsIcon.classList.add('off');
             settingsIcon.classList.add('off');
+            iconsBtns.classList.add('off');
             not = 1
             adj = 1
             // console.log('1 - set ON and adj ON')
@@ -198,9 +188,9 @@ function notesToggle() {
                 rightAdjustments.classList.remove('off');
 
                 // resetIcon.classList.remove('off');
-                adjustmentBtnsIconOff.classList.remove('off');
-                adjustmentBtnsIconOff.classList.add('on');
+                adjustmentBtnsIcon.classList.remove('off');
                 settingsIcon.classList.remove('off');
+                iconsBtns.classList.remove('off');
                 not = 0
                 adj = 0
                 // console.log('1 - set OFF and adj OFF')
@@ -212,8 +202,9 @@ function notesToggle() {
                     leftAdjustments.classList.add('on');
                     rightAdjustments.classList.add('on');
                     // resetIcon.classList.remove('off');
-                    adjustmentBtnsIconOn.classList.remove('off');
+                    adjustmentBtnsIcon.classList.remove('off');
                     settingsIcon.classList.remove('off');
+                    iconsBtns.classList.remove('off');
                     not = 0
                     adj = 1
                     // console.log('1 - set OFF and adj ON')
@@ -225,19 +216,11 @@ function adustmentBtnsToggle() {
         leftAdjustments.classList.add('on');
         rightAdjustments.classList.add('on');
         body.classList.add('bodySmall')
-        adjustmentBtnsIconOn.classList.remove('off')
-        adjustmentBtnsIconOn.classList.add('on')
-        adjustmentBtnsIconOff.classList.remove('on')
-        adjustmentBtnsIconOff.classList.add('off')
         adj = 1
     }   else if (adj === 1){
         leftAdjustments.classList.remove('on');
         rightAdjustments.classList.remove('on');
         body.classList.remove('bodySmall')
-        adjustmentBtnsIconOff.classList.remove('off')
-        adjustmentBtnsIconOff.classList.add('on')
-        adjustmentBtnsIconOn.classList.remove('on')
-        adjustmentBtnsIconOn.classList.add('off')
         adj = 0
     };
 };
@@ -328,10 +311,15 @@ function preset(number) {
 }
 
 function blank() {
-    console.log('test')
     if (set == 1) {
         settingsToggle()
     } else if (not === 1) {
         notesToggle()
     }
+}
+
+function iconsBtnsToggle() {
+    settingsIcon.classList.toggle('off');
+    notesIcon.classList.toggle('off');
+    adjustmentBtnsIcon.classList.toggle('off');
 }

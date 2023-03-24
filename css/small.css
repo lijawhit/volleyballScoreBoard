@@ -27,7 +27,7 @@ body {
     justify-self: left;
 }
 
-.adjustmentBtnsIconOff {
+.adjustmentBtnsIcon {
     grid-column: 1/3;
     grid-row: 1;
     justify-self: center;
@@ -43,6 +43,14 @@ body {
     grid-column: 2;
     grid-row: 1;
     justify-self: right;
+}
+
+.iconsBtnsToggle {
+    width: 2vh;
+    grid-column: 1/3;
+    grid-row: 1;
+    justify-self: center;
+    align-self: center;
 }
 
 .resetIcon {
