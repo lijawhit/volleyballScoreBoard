@@ -129,7 +129,7 @@ p {
 }
 
 .settingsView {
-    width: 35vh;
+    width: 20%;
     position: absolute;
     display: grid;
     transform: translate(-50%,-50%);
@@ -205,7 +205,7 @@ input[type=submit] {
     background-color: #000000;
     color: white;
     padding: 14px 20px;
-    margin: 8px 0;
+    margin: 8px 0px;
     border: none;
     border-radius: 4px;
     cursor: pointer;

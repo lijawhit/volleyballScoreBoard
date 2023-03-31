@@ -225,19 +225,19 @@ function adustmentBtnsToggle() {
     };
 };
 
-function maxCount(){
-    let maxNumber = document.getElementById('max').value;
+// function maxCount(){
+//     let maxNumber = document.getElementById('max').value;
 
-    console.log(maxNumber)
-    if (maxNumber == "" || maxNumber == null) {
-        maxNumber = 99
-    } else if (a > maxNumber || b > maxNumber) {
-        reset()
-        maxNumber = maxNumber
-        } 
+//     console.log(maxNumber)
+//     if (maxNumber == "" || maxNumber == null) {
+//         maxNumber = 99
+//     } else if (a > maxNumber || b > maxNumber) {
+//         reset()
+//         maxNumber = maxNumber
+//         } 
 
-    max = maxNumber
-}
+//     max = maxNumber
+// }
 
 function backColor() {
     let backColor = document.getElementById('backColor').value
@@ -258,7 +258,7 @@ function keyAssignment() {
 }
  
 function apply() {
-    maxCount()
+    // maxCount()
     backColor() 
     keyAssignment()
     
@@ -298,10 +298,10 @@ function preset(number) {
             document.getElementById('RIKey').value = 9;
             document.getElementById('RDKey').value = 6;
             } else if (number === 3) {
-                document.getElementById('LIKey').value = 9;
-                document.getElementById('LDKey').value = 6;
-                document.getElementById('RIKey').value = 7;
-                document.getElementById('RDKey').value = 4;
+                document.getElementById('LIKey').value = 'w';
+                document.getElementById('LDKey').value = 's';
+                document.getElementById('RIKey').value = 'o';
+                document.getElementById('RDKey').value = 'l';
                 } else {
                     document.getElementById('LIKey').value = "ArrowUp" ;
                     document.getElementById('LDKey').value = "ArrowDown";
