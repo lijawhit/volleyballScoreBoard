@@ -169,7 +169,6 @@ h6 {
     margin: 1px;
 }
 
-
 .card {
     margin-bottom: 20px;
     justify-self: center;
@@ -189,8 +188,6 @@ h6 {
 .on {
     display: flex;
 }
-
-
 
 input[type=text], select {
     width: 100%;
@@ -212,18 +209,11 @@ input[type=submit] {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    grid-column: 1 / span 2;
     font-family: var(--font);
 }
 
 input[type=color] {
     justify-self: left;
-}
-
-#Default, #preset1, #preset2, #preset3 {
-    width: 50%;
-    grid-column: auto;
-    margin: auto;
 }
 
 .bodySmall {

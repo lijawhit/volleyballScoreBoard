@@ -73,9 +73,9 @@ window.addEventListener("contextmenu", function (e) {
 
 window.addEventListener('keydown', (event) => {
     if (set === 0 && not === 0) {
-        if (event.key === LIKeyV) {
+        if (event.key === LIKeyV || event.key === 'AudioVolumeUp') {
             leftScoreIncrease();
-        }   else if (event.key === LDKeyV){
+        }   else if (event.key === LDKeyV || event.key === 'AudioVolumeUp'){
                 leftScoreDecrease();
             }   else if (event.key === RIKeyV) {
                     rightScoreIncrease();
